@@ -11,9 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     match ($_POST['tipo']) {
         'fotografias' => supabaseUpdatePhotoPaintingBook('fotografias'),
         'pinturas' => supabaseUpdatePhotoPaintingBook('pinturas'),
-        'filmes' => supabaseUpdateFilm('filmes'),
+        'filmes' => supabaseUpdateFilm(),
         'livros' => supabaseUpdatePhotoPaintingBook('livros'),
-        'legislacao' => supabaseUpdateLegislation('legislacao'),
+        'legislacao' => supabaseUpdateLegislation(),
         default => null
     };
 }

@@ -221,9 +221,11 @@ function supabaseCreateFilm($id_user)
 
         if (!in_array($tipomidia, $tiposPermitidos, true)) {
             die('Tipo de mídia inválido.');
+        } else {
+            $tipomidiatratado = urlencode($tiposPermitidos[$tipomidia]);
         }
 
-        $bucket = 'Filmes/' . basename($tipomidia);
+        $bucket = 'Filmes/' . basename($tipomidiatratado);
 
         if ($file === null || $file['error'] !== UPLOAD_ERR_OK) {
             die('Arquivo inválido.');
@@ -235,7 +237,6 @@ function supabaseCreateFilm($id_user)
 
             $extension = preg_replace(FORMAT, '', pathinfo($file['name'], PATHINFO_EXTENSION));
             $fileName = uniqid('mov_', true) . '.' . $extension;
-
 
             $client->post(
                 "$url/storage/v1/object/$bucket/$fileName",
@@ -279,7 +280,7 @@ function supabaseCreateFilm($id_user)
 
 function getUserAdm($user_id, $token)
 {
-    require_once '../composer/vendor/autoload.php';
+    require_once COMPOSER_AUTOLOAD;
     $client = new GuzzleHttp\Client();
 
     $url = $_ENV['SUPABASE_URL'];
@@ -308,7 +309,7 @@ function getUserAdm($user_id, $token)
 
 function getUserId($user_id, $token)
 {
-    require_once '../composer/vendor/autoload.php';
+    require_once COMPOSER_AUTOLOAD;
     $client = new GuzzleHttp\Client();
 
     $url = $_ENV['SUPABASE_URL'];
@@ -394,7 +395,7 @@ function supabaseUpdatePhotoPaintingBook($table)
     }
 }
 
-function supabaseUpdateFilm($table)
+function supabaseUpdateFilm()
 {
     require_once COMPOSER_AUTOLOAD;
 
@@ -426,7 +427,7 @@ function supabaseUpdateFilm($table)
         $client = new GuzzleHttp\Client();
 
         $client->patch(
-            "$url/rest/v1/$table?id=eq.$id",
+            "$url/rest/v1/filmes?id=eq.$id",
             [
                 'headers' => [
                     'apikey' => $api_key,
