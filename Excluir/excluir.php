@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </script>
 
     <script>
-        document.getElementById('secao').addEventListener('change', function() {
+        document.getElementById('secao').addEventListener('change', function () {
 
             switch (this.value) {
 

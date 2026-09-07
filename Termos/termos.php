@@ -142,7 +142,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </article>
 
         </div>
-        <button onclick="window.open('https://docs.google.com/document/d/1u9u89bEDej1IgfXIat2Dl9XtmB2pfP5ahr8ODmKS5Iw/edit?usp=sharing')" class="btn-documentacao">
+        <button
+            onclick="window.open('https://docs.google.com/document/d/1u9u89bEDej1IgfXIat2Dl9XtmB2pfP5ahr8ODmKS5Iw/edit?usp=sharing')"
+            class="btn-documentacao">
             Acessar modelo de Termo de Uso
         </button>
     </main>
@@ -188,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 dados.forEach((item) => {
                     html += `
                     <a href="${item.link}" target="_blank">
-                        <p style="padding: 12px 15px; cursor: pointer; border-bottom: 1px solid rgb(243, 244, 246); transition: background 0.2s; background: white;" onmouseover="this.style.background='#fef3c7'" onmouseout="this.style.background='white'">                 
+                        <p style="padding: 12px 15px; cursor: pointer; border-bottom: 1px solid rgb(243, 244, 246); transition: background 0.2s; background: white;" onmouseover="this.style.background='#fef3c7'" onmouseout="this.style.background='white'">
                             Termo de uso de <strong>${item.autor}</strong><br>
                             <strong>ID: ${item.id}</strong>
                         </p>

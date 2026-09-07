@@ -296,7 +296,7 @@ function getUserAdm($user_id, $token)
         $data = json_decode($response->getBody());
 
         if (!empty($data) && isset($data[0]->adm)) {
-            return (bool)$data[0]->adm;
+            return (bool) $data[0]->adm;
         }
 
         return false;
@@ -325,7 +325,7 @@ function getUserId($user_id, $token)
         $data = json_decode($response->getBody());
 
         if (!empty($data) && isset($data[0]->id)) {
-            return (int)$data[0]->id;
+            return (int) $data[0]->id;
         }
 
         return false;
@@ -545,7 +545,8 @@ function supabaseCreateLegislation($id_user)
     }
 }
 
-function supabaseUpdateLegislation($id_user){
+function supabaseUpdateLegislation()
+{
     require_once COMPOSER_AUTOLOAD;
 
     $url = $_ENV['SUPABASE_URL'];

@@ -273,26 +273,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="form-group">
                         <label for="leg_titulo">Título *</label>
-                        <input type="text" id="leg_titulo" name="titulo" required
-                            placeholder="Ex: Lei Afonso Arinos">
+                        <input type="text" id="leg_titulo" name="titulo" required placeholder="Ex: Lei Afonso Arinos">
                     </div>
 
                     <div class="form-group">
                         <label for="leg_norma">Norma *</label>
-                        <input type="text" id="leg_norma" name="norma" required
-                            placeholder="Ex: Lei nº 2.848/1940">
+                        <input type="text" id="leg_norma" name="norma" required placeholder="Ex: Lei nº 2.848/1940">
                     </div>
 
                     <div class="form-group">
                         <label for="leg_data">Data</label>
-                        <input type="text" id="leg_data" name="data" required
-                            placeholder="Ex: 7 de dezembro de 1940">
+                        <input type="text" id="leg_data" name="data" required placeholder="Ex: 7 de dezembro de 1940">
                     </div>
 
                     <div class="form-group">
                         <label for="leg_link">Link</label>
-                        <input type="text" id="leg_link" name="link" required
-                            placeholder="Ex: https://...">
+                        <input type="text" id="leg_link" name="link" required placeholder="Ex: https://...">
                     </div>
 
                     <button type="submit" class="btn-submit">Enviar Legislação</button>
